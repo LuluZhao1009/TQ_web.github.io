@@ -11,13 +11,13 @@ jupyter-build:
     - jupyter-book build website
   artifacts:
     paths:
-      - website/_build/
+      - _build/
 
 pages:
   stage: deploy
   image: busybox:latest
   script:
-    - mv website/_build/html public
+    - mv _build/html public
   artifacts:
     paths:
       - public
